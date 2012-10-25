@@ -17,10 +17,12 @@ require_once 'includes/Vehicle.php';
         $car = new Vehicle();
         $car->setBrand('Porsche');
         $car->setShape('Coupe');
-        $car->setColor('White');
+        $car->setColor('Green');
         $car->setNumDoors(2);
         $car->setPrice(50000);
         
+        echo $car->getColor() . '<br />';
+                
         $car->showPrice();
         $car->numDoors();
         $car->drive();

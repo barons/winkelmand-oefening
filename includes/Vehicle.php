@@ -29,7 +29,7 @@ class Vehicle {
      */
     public function showPrice ()
     {
-        echo 'This vehicle costs ' . $this->price . '<br />';
+        echo 'This vehicle costs ' . $this->getPrice() . '<br />';
     }
     
     /**
@@ -37,7 +37,7 @@ class Vehicle {
      */
     public function numDoors ()
     {
-        echo 'This vehicle has ' . $this->num_doors . ' doors.<br />';
+        echo 'This vehicle has ' . $this->getNumDoors() . ' doors.<br />';
     }
     
     /**
@@ -55,7 +55,7 @@ class Vehicle {
      * @param string $color
      * @throws Exception
      */
-    public function setColor($color)
+    public function setColor ($color)
     {
         if (null === $color){
             throw new Exception('No color!');
@@ -76,7 +76,7 @@ class Vehicle {
      * 
      * @param integer $numDoors
      */
-    public function setNumDoors($numDoors)
+    public function setNumDoors ($numDoors)
     {
         $this->num_doors = $numDoors;
     }
@@ -84,7 +84,7 @@ class Vehicle {
      * 
      * @param float $price
      */
-    public function setPrice($price)
+    public function setPrice ($price)
     {
         $this->price = $price;
     }
@@ -92,11 +92,44 @@ class Vehicle {
      * 
      * @param string $shape
      */
-    public function setShape($shape)
+    public function setShape ($shape)
     {
         $this->shape = $shape;
         
     }
+    
+    /*** getters ***/
+    /**
+     * 
+     * @return string
+     */
+    public function getColor ()
+    {
+        if ($this->color === 'White') {
+            $this->color = 'Red';
+        }
+        
+        return $this->color;
+    }
+    
+    /**
+     * 
+     * @return integer
+     */
+    public function getNumDoors ()
+    {
+        return $this->num_doors;
+    }
+    
+    /**
+     * 
+     * @return float
+     */
+    public function getPrice ()
+    {
+        return $this->price;
+    }
+     
 
     
 }
