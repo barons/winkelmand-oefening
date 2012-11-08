@@ -1,13 +1,13 @@
 <?php
 
 class Cell {
-    private $_content;
-    
-    public function __construct($content) 
+    protected $_content; // binnen huidige en child classes beschikbaar
+
+    public function __construct($content)
     {
         $this->_content = $content;
     }
-    
+
     public function getContent ()
     {
         return $this->_content;
