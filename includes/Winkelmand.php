@@ -53,6 +53,15 @@ class Winkelmand {
     public function verwijderenUitMand($items) {
 
         // DIY
+        // We lussen over het bestaande mandje om te zien of er reeds een element met hetzelfde id bestaat in onze mand
+        foreach ($this->mand as $key => $value) {
+            if ($this->mand[$key]['id'] == $items['id']) {
+                $this->mand[$key]['aantal'] -= $items['aantal'];
+                return;// stop met code uit te voeren, we verwachten maar één element en die hebben we gehad!
+            }
+        }
+       // nog geen element in ons mandje, we voegen het dus toe.
+       $this->mand[] = $items;
 
     }
 
@@ -71,6 +80,7 @@ class Winkelmand {
     public function mandLeegmaken() {
 
         // DIY
+        $this->unset(mand);
 
     }
 
